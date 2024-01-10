@@ -34,21 +34,8 @@ User.init(
             validate: {
                 len: [8]
             },
-        },
-        posts_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'posts',
-                key: 'id'
-            }
-        },
-        comments_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'comments',
-                key: 'id'
-            }
         }
+
     },
     {
         hooks: {
