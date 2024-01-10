@@ -40,7 +40,7 @@ Post.init(
                 model: 'users',
                 key: 'id'
             }
-        }
+        },
         // comment_id: {
         //     type: DataTypes.INTEGER,
         //     references: {
