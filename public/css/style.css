@@ -17,6 +17,10 @@ nav button {
     font-size: 15px;
 }
 
+nav button:hover {
+    cursor: pointer;
+}
+
 .card {
     border: 3px black solid;
     min-height: 140px;
@@ -49,3 +53,31 @@ nav button {
 .card-header:hover {
     cursor: pointer;
 }
+
+.card-h3 {
+    background-color: grey;
+    color: lightcyan;
+    font-size: 16px;
+    font-weight: lighter;
+    float: right;
+}
+
+#comm-button {
+    padding: 5px;
+    margin: 10px;
+}
+
+#comm-head {
+    color: lightcyan;
+    background-color: gray;
+    font-size: 20px;
+    padding: 6px;
+    margin-top: 10px;
+}
+/* a {
+    background-color: gray;
+}
+
+a:hover {
+    cursor: default;
+} */

@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
         const dbPostData = await Post.findAll();
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        console.log(posts);
+        // console.log(posts);
         // res.json(posts);
         res.render('homepage', {
             posts
@@ -15,14 +15,31 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const dbPostData = await Post.findByPk(req.params.id);
         const post = dbPostData.get({ plain: true });
-        console.log(post);
+        const dbCommentData = await Comment.findAll({ where: { post_id: post.id } })
+        const comments = dbCommentData.map(com => com.get({ plain: true }))
+        // console.log(post);
         // res.json(posts);
+        console.log(comments);
         res.render('postPage', {
-            post
+            post, comments
+        })
+    } catch (error) {
+        res.json(error)
+    }
+});
+
+router.get('/login', async (req, res) => {
+    try {
+        const dbPostData = await Post.findAll();
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        // console.log(posts);
+        // res.json(posts);
+        res.render('login', {
+            posts
         })
     } catch (error) {
         res.json(error)
