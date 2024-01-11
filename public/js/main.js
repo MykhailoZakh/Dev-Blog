@@ -12,9 +12,11 @@ const getPost = (event) => {
     window.location.replace(`/post/${id}`)
 };
 
-const postHEL = document.querySelectorAll('.card-header');
+if (document.querySelector('.card-header')) {
+    const postHEL = document.querySelectorAll('.card-header');
+    postHEL.forEach(post => post.addEventListener('click', getPost));
+}
 
-postHEL.forEach(post => post.addEventListener('click', getPost));
 
 const logout = async () => {
 

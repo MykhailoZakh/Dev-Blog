@@ -63,10 +63,15 @@ nav button:hover {
     font-weight: lighter;
     float: right;
 }
-
+.comm-line {
+    display: flex;
+    justify-content: space-between;
+    background-color: grey;
+    padding: 6px;
+}
 #comm-button {
     padding: 5px;
-    margin: 10px;
+    margin: 10px;  
 }
 
 #comm-head {
@@ -108,4 +113,12 @@ nav button:hover {
 
 .user-post:hover {
     cursor: pointer;
+}
+
+#hidden {
+    visibility: hidden;
+}
+
+#visible {
+    visibility: visible;
 }
