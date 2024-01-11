@@ -8,6 +8,7 @@ nav {
     /* float: left; */
     width: 100%;
     height: 100%;
+    margin-bottom: 40px;
 }
 
 nav button {
@@ -33,12 +34,12 @@ nav button:hover {
     background-color: grey;
     padding: 6px;
 }
-.card-h1 {
+.title {
     background-color: grey;
     color: lightcyan;
     font-size: 26px;
 }
-.card-h2 {
+.date {
     background-color: grey;
     color: lightcyan;
     font-size: 16px;
@@ -74,10 +75,36 @@ nav button:hover {
     padding: 6px;
     margin-top: 10px;
 }
-/* a {
+
+#new-post {
+    position: absolute;
+    color:bisque;
     background-color: gray;
+    font-size: 26px;
+    bottom: 5%;
+    left: 45%;
+    width: 10%;
+    height: 5%;
+    padding: 10px;
+    border: 2px black solid ;
 }
 
-a:hover {
-    cursor: default;
-} */
+#new-post:hover{
+    cursor: pointer;
+}
+
+.user-post {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 25px;
+    border: 2px black solid;
+    background-color: gray;
+    border-radius: 7px;
+}
+
+.user-post:hover {
+    cursor: pointer;
+}

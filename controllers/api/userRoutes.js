@@ -14,11 +14,28 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.post('/signup', async (req, res) => {
+    try {
+        // name: req.body.name,
+        // email: req.body.email,
+        // password: req.body.password,
 
+        const createUser = await User.create(req.body);
+        req.session.save(() => {
+            req.session.user_id = createUser.id;
+            req.session.logged_in = true;
+        });
+        res.json(createUser);
+
+    } catch (error) {
+        res.status(400).json(error);
+    }
+})
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
+        console.log(req.body)
+        const userData = await User.findOne({ where: { name: req.body.username } });
 
         if (!userData) {
             res
@@ -47,6 +64,7 @@ router.post('/login', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
 
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
