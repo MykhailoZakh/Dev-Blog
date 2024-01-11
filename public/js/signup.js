@@ -11,7 +11,7 @@ const userSignUP = async (event) => {
             body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' }
         });
-        console.log(response.body);
+        // console.log(response.body);
         if (response.ok) {
             window.location.replace('/dashboard');
         } else {

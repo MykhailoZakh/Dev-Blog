@@ -1,16 +1,17 @@
 {{#with post}}{{>post-card}} {{/with}}
 
-<header class="comm-line"><p id="comm-head">Comments area ⬇</p><button id="comm-button">Add Comment</button> </header>
+<header class="comm-line"><p id="comm-head">Comments area ⬇</p>{{#if logged_in}}<button id="comm-button">Add Comment</button> {{/if}} </header>
 
 <form class="form" id="hidden">
-    <header class="form-header" >Create New Comment</header>
+    <header class="form-head" >Create New Comment</header>
 
     <p class="form-p">
         <label class="form-label" for="content">Comment</label>
-        <input class="form-input" type="text" id="post-text" name="text" placeholder="Your Text">
+        <input class="form-input" type="text" id="comm-text" name="text" placeholder="Your Text">
     </p>
-   
+   <p>
     <button class="form-btn" id="post-createBtn">Create</button>
+   </p>
 </form>
 
 {{#each comments as |content|}} {{>comment-card}} {{/each}}

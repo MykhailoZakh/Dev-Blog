@@ -5,7 +5,7 @@ const updatePost = async (event) => {
     const name = document.querySelector('#post-title').value.trim();
     const text = document.querySelector('#post-text').value.trim();
     console.log(name, text);
-    const postID = document.querySelector('.card-header').getAttribute('id');
+    const postID = document.querySelector('.form-head').getAttribute('id');
     // console.log(postID);
 
     const resp = await fetch(`/api/posts/${postID}`, {
@@ -27,7 +27,7 @@ document.querySelector('#post-updateBtn').addEventListener('click', updatePost);
 
 const deletePost = async (event) => {
     event.preventDefault();
-    const postID = document.querySelector('.card-header').getAttribute('id');
+    const postID = document.querySelector('.form-head').getAttribute('id');
     const resp = await fetch(`/api/posts/${postID}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }

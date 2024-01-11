@@ -1,11 +1,16 @@
+:root {
+    --olive: darkolivegreen;
+    --light: lightcyan;
+    --green: lightgreen
+  }
 
 * {
-    background-color:darkolivegreen;
+    background-color: antiquewhite;
     font-size: 20px;
 }   
 
 nav {
-    background-color: grey;
+    background-color: var(--olive);
     /* float: left; */
     width: 100%;
     height: 100%;
@@ -13,10 +18,12 @@ nav {
 }
 
 nav button {
-    background-color: azure;
+    background-color: var(--green);
     padding: 10px;
     margin: 20px;
-    font-size: 15px;
+    font-size: 19px;
+    border-radius: 5px;
+    color: var(--olive);
 }
 
 nav button:hover {
@@ -24,25 +31,28 @@ nav button:hover {
 }
 
 .card {
-    border: 3px black solid;
+    border: 2px gray solid;
+    height: 100%;
     min-height: 140px;
     margin: 20px;
+    border-radius: 6px;
 }
 
 .card-header {
     display: flex;
     justify-content: space-between;
-    background-color: grey;
+    background-color: var(--olive);
     padding: 6px;
 }
+
 .title {
-    background-color: grey;
-    color: lightcyan;
+    background-color: var(--olive);
+    color: var(--light);
     font-size: 26px;
 }
 .date {
-    background-color: grey;
-    color: lightcyan;
+    background-color: var(--olive);
+    color: var(--light);
     font-size: 16px;
     font-weight: lighter;
 }
@@ -57,8 +67,8 @@ nav button:hover {
 }
 
 .card-h3 {
-    background-color: grey;
-    color: lightcyan;
+    background-color: var(--olive);
+    color: var(--light);
     font-size: 16px;
     font-weight: lighter;
     float: right;
@@ -66,7 +76,7 @@ nav button:hover {
 .comm-line {
     display: flex;
     justify-content: space-between;
-    background-color: grey;
+    background-color: var(--olive);
     padding: 6px;
 }
 #comm-button {
@@ -75,8 +85,8 @@ nav button:hover {
 }
 
 #comm-head {
-    color: lightcyan;
-    background-color: gray;
+    color: var(--light);
+    background-color: var(--olive);
     font-size: 20px;
     padding: 6px;
     margin-top: 10px;
@@ -85,12 +95,12 @@ nav button:hover {
 #new-post {
     position: absolute;
     color:bisque;
-    background-color: gray;
+    background-color: var(--olive);
     font-size: 26px;
     bottom: 5%;
     left: 45%;
     width: 10%;
-    height: 5%;
+    height: 75px;
     padding: 10px;
     border: 2px black solid ;
 }
@@ -107,8 +117,9 @@ nav button:hover {
     margin-right: 20%;
     margin-top: 25px;
     border: 2px black solid;
-    background-color: gray;
+    background-color: var(--olive);
     border-radius: 7px;
+    text-decoration: none;
 }
 
 .user-post:hover {
@@ -121,4 +132,67 @@ nav button:hover {
 
 #visible {
     visibility: visible;
+}
+
+.form-head {
+    color: var(--light);
+    background-color: var(--olive);
+    padding: 6px;
+    font-size: 26px;
+}
+form p {
+    padding: 9px;
+}
+
+form p label {
+    font-weight: bold;
+    font-size: 20px;
+    color: chocolate;
+    display: block;
+    padding: 5px;
+}
+form p input {
+    background-color: aliceblue;
+    padding: 6px;
+    margin: 5px;
+    width: 320px;
+}
+
+#signin  {
+    background-color: var(--green);
+    width: 320px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+#sign {
+    margin: 100px;
+}
+
+form p button {
+    background-color: var(--green);
+    width: 320px;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 30px;
+    padding: 6px;
+    display: block;
+}
+
+form p button:hover {
+    cursor: pointer;
+}
+
+.form { 
+    border: 2px gray solid;
+    height: 100%;
+    min-height: 140px;
+    margin: 20px;
+    border-radius: 6px;
+}
+#comm-button {
+    background-color: var(--green);
+    width: 320px;
+    border-radius: 5px;
+    margin: 5px;
 }

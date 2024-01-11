@@ -4,13 +4,21 @@ const isLoged = require('../../utils/isLoged');
 
 router.post('/', isLoged, async (req, res) => {
     try {
-
+        console.log(`here`);
         const createPost = await Comment.create({
             ...req.body,
-            created_by: req.session.user_name,
-            user_id: req.session.user_id
+            created_by: req.session.user_name
         });
         res.json(createPost);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+router.get('/', async (req, res) => {
+    try {
+        const postData = await Post.findAll()
+        res.json(postData);
     } catch (error) {
         res.status(500).json(error);
     }
