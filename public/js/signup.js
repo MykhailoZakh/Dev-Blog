@@ -13,7 +13,7 @@ const userSignUP = async (event) => {
         });
         console.log(response.body);
         if (response.ok) {
-            window.location.replace('/login');
+            window.location.replace('/dashboard');
         } else {
             alert(response.statusText);
         }

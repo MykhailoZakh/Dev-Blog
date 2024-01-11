@@ -4,7 +4,9 @@ const returnHome = () => document.location.replace('/');
 document.querySelector('#home').addEventListener('click', returnHome);
 
 const getLogin = () => window.location.replace('/login');
-document.querySelector('#login').addEventListener('click', getLogin);
+if (document.querySelector('#login')) {
+    document.querySelector('#login').addEventListener('click', getLogin);
+}
 const getPost = (event) => {
     const id = event.target.getAttribute("id");
     window.location.replace(`/post/${id}`)
@@ -27,7 +29,9 @@ const logout = async () => {
     }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+if (document.querySelector('#logout')) {
+    document.querySelector('#logout').addEventListener('click', logout);
+}
 
 
 const dashboard = () => window.location.replace('/dashboard');

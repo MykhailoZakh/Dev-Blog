@@ -1,14 +1,69 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
+const isLoged = require('../../utils/isLoged');
+
 
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll()
         res.json(postData);
     } catch (error) {
-        console.log(err);
-        res.status(500).json(err);
+        res.status(500).json(error);
     }
 });
+
+router.post('/', isLoged, async (req, res) => {
+    try {
+
+        const createPost = await Post.create({
+            ...req.body,
+            created_by: req.session.user_name,
+            user_id: req.session.user_id
+        });
+        res.json(createPost);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
+
+router.put('/:id', isLoged, async (req, res) => {
+    try {
+        console.log(req.body);
+        const updatedPost = await Post.update(req.body,
+            {
+                where: {
+                    id: req.params.id
+                }
+            });
+        if (!updatedPost) {
+            res.status(404).json({
+                message: `No tag found with this id!`
+            });
+            return;
+        };
+
+        res.json(updatedPost);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+router.delete('/:id', isLoged, async (req, res) => {
+
+    try {
+        const deletePost = await Post.destroy({
+            where: { id: req.params.id }
+        });
+        if (!deletePost) {
+            res.status(404).json({
+                message: `No tag found with this id!`
+            });
+            return;
+        }
+        res.json(deletePost);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+})
 
 module.exports = router;

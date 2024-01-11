@@ -1,6 +1,6 @@
 {{#each user.posts as |post|}}
-<a class="user-post"><p class="title">{{name}}</p> <h2 class="date">Created at: {{format_time createdAt}}</h2></a>
+<a href="dashboard/post/{{id}}" id="{{id}}" class="user-post"><p class="title">{{name}}</p> <h2 class="date">Created at: {{format_time createdAt}}</h2></a>
  {{/each}}
 
-<section id="new-post">New Post +</section>
+<a href="/dashboard/addpost" id="new-post">New Post +</a>
 <script src="/js/dashboard.js"></script>

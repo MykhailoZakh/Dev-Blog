@@ -20,9 +20,6 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        created_on: {
-            type: DataTypes.DATE
-        },
         created_by: {
             type: DataTypes.STRING,
             allowNull: false
@@ -34,18 +31,9 @@ Post.init(
                 key: 'id'
             }
         }
-        // comment_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'comments',
-        //         key: 'id'
-        //     }
-        // }
-
     },
     {
         sequelize,
-        // timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'posts'

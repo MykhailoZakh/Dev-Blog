@@ -14,8 +14,11 @@
 <button id="home">Home</button>
         <button id="dashboard"> Dashboard</button>
         {{!-- <a href="/login"><button>Login</button></a> --}}
-        <button id="login">Login</button>
+        {{#if logged_in}}
         <button id="logout">Logout</button>
+        {{else}}
+        <button id="login">Login</button>
+         {{/if}}
     </nav>
   {{{ body }}}
 <script src="/js/main.js"></script>
