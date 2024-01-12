@@ -196,3 +196,8 @@ form p button:hover {
     border-radius: 5px;
     margin: 5px;
 }
+
+textarea {
+    background-color: aliceblue;
+    padding: 10px;
+}
