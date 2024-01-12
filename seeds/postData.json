@@ -1,20 +1,20 @@
 [
     {
-        "name": "Post1",
-        "text": "Some Text1",
-        "created_by": "user1",
+        "name": "70 million",
+        "text": "About 70 million Americans regularly listen to podcasts, according to Edison Media Research. People who listen weekly tend to spend five hours a week on them",
+        "created_by": "addedUser",
         "user_id": "1"
     },
     {
-        "name": "Post2",
-        "text": "Some Text2",
-        "created_by": "user2",
+        "name": "1 billion",
+        "text": "In 2017, YouTube reported that people watched a billion hours on that service every day. On average, young Americans spend two hours a day watching video online.",
+        "created_by": "userMike",
         "user_id": "2"
     },
     {
-        "name": "Post3",
-        "text": "Some Text3",
-        "created_by": "user3",
+        "name": "30 minutes",
+        "text": "Instagram lifted Snapchat’s video diary feature, Stories, to great success; more than 800 million people use Instagram, for more than 30 minutes a day on average",
+        "created_by": "newUser",
         "user_id": "3"
     }
 ]

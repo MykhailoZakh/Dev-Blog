@@ -1,27 +1,17 @@
 [
     {
-      "name": "name1",
-      "email": "name1@hotmail.com",
+      "name": "userMike",
+      "email": "userMike@hotmail.com",
       "password": "password12345"
     },
     {
-      "name": "name2",
-      "email": "name2@gmail.com",
+      "name": "newUser",
+      "email": "newUser@gmail.com",
       "password": "password12345"
     },
     {
-      "name": "name3",
-      "email": "name3@aol.com",
-      "password": "password12345"
-    },
-    {
-      "name": "name4",
-      "email": "name4@msn.com",
-      "password": "password12345"
-    },
-    {
-      "name": "name5",
-      "email": "name5@yahoo.com",
+      "name": "addedUser",
+      "email": "addedUser@aol.com",
       "password": "password12345"
     }
   ]

@@ -1,20 +1,17 @@
 [
     {
-        "text": "Comment Text1",
-        "created_on": "2016-02-01",
-        "created_by": "user1",
+        "text": "Added comment to support you",
+        "created_by": "userMike",
         "post_id": "1"
     },
     {
-        "text": "Comment Text2",
-        "created_on": "2016-02-02",
-        "created_by": "user2",
+        "text": "Supporting comment",
+        "created_by": "newUser",
         "post_id": "2"
     },
     {
-        "text": "Comment Text3",
-        "created_on": "2016-02-03",
-        "created_by": "user3",
+        "text": "Supper Comment",
+        "created_by": "addedUser",
         "post_id": "3"
     }
 ]
