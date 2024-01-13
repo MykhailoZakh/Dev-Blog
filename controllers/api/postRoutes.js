@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(error);
     }
 });
-
+// POST method  for http://localhost:3001/api/posts (adding post to db)
 router.post('/', isLoged, async (req, res) => {
     try {
 
@@ -26,6 +26,7 @@ router.post('/', isLoged, async (req, res) => {
     }
 })
 
+// PUT method  for http://localhost:3001/api/posts (update post in db choosing by its id)
 router.put('/:id', isLoged, async (req, res) => {
     try {
         console.log(req.body);
@@ -48,6 +49,7 @@ router.put('/:id', isLoged, async (req, res) => {
     }
 });
 
+// DELETE method  for http://localhost:3001/api/posts (DELETE post from db choosing by its id)
 router.delete('/:id', isLoged, async (req, res) => {
 
     try {

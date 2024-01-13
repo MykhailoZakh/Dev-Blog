@@ -1,5 +1,5 @@
 
-
+//  func for Updating post
 const updatePost = async (event) => {
     event.preventDefault();
     const name = document.querySelector('#post-title').value.trim();
@@ -24,7 +24,7 @@ const updatePost = async (event) => {
 document.querySelector('#post-updateBtn').addEventListener('click', updatePost);
 
 
-
+// func for Deleting post
 const deletePost = async (event) => {
     event.preventDefault();
     const postID = document.querySelector('.form-head').getAttribute('id');

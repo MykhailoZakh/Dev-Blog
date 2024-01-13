@@ -14,13 +14,9 @@ router.get('/', async (req, res) => {
     }
 });
 
+// POST method  for http://localhost:3001/api/users/signup (adding user to db and creating seesion info)
 router.post('/signup', async (req, res) => {
     try {
-        // req.body
-        // name: req.body.name,
-        // email: req.body.email,
-        // password: req.body.password,
-        console.log(req.body)
         const createUser = await User.create({
             name: req.body.name,
             email: req.body.email,
@@ -40,6 +36,7 @@ router.post('/signup', async (req, res) => {
     }
 })
 
+// POST method  for http://localhost:3001/api/users/login (checking user if he is in db and creating seesion info)
 router.post('/login', async (req, res) => {
     try {
         console.log(req.body)
@@ -74,7 +71,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-
+// POST method  for http://localhost:3001/api/users/logut (romove users session info from db)
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {

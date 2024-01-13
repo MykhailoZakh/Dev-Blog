@@ -1,4 +1,4 @@
-// function for Sign Up
+// function for Sign Up to add new user to DB
 const userSignUP = async (event) => {
     event.preventDefault();
     const name = document.querySelector('#name-signup').value.trim();

@@ -1,3 +1,4 @@
+//  creating sequelize instance to connect to SQL Database
 const Sequelize = require('sequelize');
 require('dotenv').config();
 let sequelize;

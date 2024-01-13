@@ -1,5 +1,5 @@
 
-
+// func to send req to DB to check useres login info
 const logInFunc = async (event) => {
     event.preventDefault();
 

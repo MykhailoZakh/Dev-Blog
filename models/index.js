@@ -2,6 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
+// creating bridges for different Models
 
 User.hasMany(Post, {
     foreignKey: 'user_id'

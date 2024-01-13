@@ -3,12 +3,11 @@ const { User, Post, Comment } = require('../models');
 const isLoged = require('../utils/isLoged')
 
 
+//GET method for http://localhost:3001/ (printing posts on homepage)
 router.get('/', async (req, res) => {
     try {
         const dbPostData = await Post.findAll();
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        // console.log(posts);
-        // res.json(posts);
         res.render('homepage', {
             posts, logged_in: req.session.logged_in
         })
@@ -17,6 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// GET method for http://localhost:3001/dashboard (checking if user is loged in to app. If yes retrive his posts )
 router.get('/dashboard', isLoged, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
@@ -25,7 +25,6 @@ router.get('/dashboard', isLoged, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        // console.log(user);
         res.render('dashboard', {
             user,
             logged_in: req.session.logged_in
@@ -35,6 +34,7 @@ router.get('/dashboard', isLoged, async (req, res) => {
     }
 });
 
+// GET method for http://localhost:3001/dashboard (user can create new post)
 router.get('/dashboard/addpost', isLoged, async (req, res) => {
     try {
         res.render('addPost', {
@@ -45,6 +45,7 @@ router.get('/dashboard/addpost', isLoged, async (req, res) => {
     }
 });
 
+// GET method for http://localhost:3001/dashboard/post/id (user can update or delete his post)
 router.get('/dashboard/post/:id', isLoged, async (req, res) => {
     try {
 
@@ -57,7 +58,7 @@ router.get('/dashboard/post/:id', isLoged, async (req, res) => {
         res.status(500).json(error);
     }
 })
-
+// GET method for http://localhost:3001/post/id (giving one post per page and print all comments to this post ,only user can add comment)
 router.get('/post/:id', async (req, res) => {
     try {
         const dbPostData = await Post.findByPk(req.params.id);
@@ -75,6 +76,7 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+// GET method for http://localhost:3001/login (user can log in to app)
 router.get('/login', async (req, res) => {
     try {
         res.render('login', {
@@ -85,6 +87,7 @@ router.get('/login', async (req, res) => {
     }
 });
 
+// GET method for http://localhost:3001/login (user can sign up  to app)
 router.get('/signup', async (req, res) => {
     try {
         res.render('signup', {

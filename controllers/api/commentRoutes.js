@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const isLoged = require('../../utils/isLoged');
 
+// POST method  for http://localhost:3001/api/comments (adding comment to db)
 router.post('/', isLoged, async (req, res) => {
     try {
         console.log(`here`);
@@ -15,6 +16,7 @@ router.post('/', isLoged, async (req, res) => {
     }
 });
 
+// GET method  for http://localhost:3001/api/comments (printing all comments)
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll()
